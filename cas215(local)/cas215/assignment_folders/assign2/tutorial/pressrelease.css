@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html {
+	font-size: 16px;
+}
+body {
+	background-color: #ffffff;
+	margin: 0;
+	padding: 0;
+}
+#contact-info {
+	text-align: right;
+	padding: 2px;
+	margin: 0 auto;
+	font-size: 1em;
+	font-style: italic;
+	color: #000080;
+	border-right: 10px solid #000;
+}
+#release {
+	text-align: center;
+	padding: 2px;
+	margin: 0 auto;
+	font-size: 1em;
+	color: #000;
+	font-variant: small-caps;
+	border: 1px solid;
+	border-right: 10px solid #000;
+}
+h1 {
+	font-size: 2.1em;
+	padding: 4px 0 0 0;
+	font-family: "Allerta Stencil", sans-serif;
+	color: #4C0016;
+	text-shadow: 2px 2px 2px #104F53;
+}
+h2 {
+	font-size: 1.5em;
+	margin-left: 5%;
+	margin-right: 5%;
+	text-align: center;
+	font-style: italic;
+}
+p {
+	margin-left: 10%;
+	margin-right: 10%;
+	text-align: justify;
+}
+#summary {
+	padding: 3px;
+	border: 2px solid #008000;
+	border-left: 10px solid #008000;
+	font-size: .8em;
+	background-color: #fffbc6;
+	box-shadow: 5px 5px 5px #104F53;
+}
+.company-name {
+	font-weight: bold;
+}
+footer {
+	border: 1px groove #104F53;
+	text-align: right;
+	color: #104F53;
+	font-size: .8em;
+}
+a:link, a:visited {
+	text-decoration: underline;
+	color: #4C0016;
+	margin: 5px;
+}
+a:hover {
+	background-color:#A36D5C;
+	color: #104F53;
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: underline;
+	color: #A36D5C;
+}
+a:focus {
+	color:#2CD8E3;
+}

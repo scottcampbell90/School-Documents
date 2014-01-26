@@ -1,0 +1,7 @@
+/* CSS for Chapter 2 Example 2 */
+
+.icon-links a	{ background:0 50% no-repeat;padding-left:20px; }
+a.presentation	{ background-image: url(../images/presentation.png); }
+a.video			{ background-image: url(../images/video.png); }
+a.pdf			{ background-image: url(../images/pdf.png);	}
+a.image			{ background-image: url(../images/image.png); } 

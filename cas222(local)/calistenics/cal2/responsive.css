@@ -1,0 +1,404 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url("reset.css");
+
+
+
+/* __________________________________________________________________________________
+
+       General Style -- mostly color and typography, shared by all media sizes
+
+*/
+
+h1 {
+	font-family: 'Fredericka the Great', Arial, sans-serif;
+	font-weight: 400;
+	color: #333;
+	font-size: 3em;
+}
+
+p {
+	font-size: 1.2em;
+	margin: 1em 0;
+}
+
+em {
+	font-style: italic;
+}
+
+label {
+	font-size: 1.1em;
+}
+
+img {
+	width: 100%;
+}
+
+#logoholder {
+	background-color: #7A1501;
+	margin-bottom: 20px;
+}
+
+header {
+	background-color: #FFF;
+	padding: 20px;
+}
+
+
+nav {
+	height: 40px;
+	margin-top: 25px;
+	background-color: #7A1501;
+	padding-top: 20px;
+}
+nav li {
+	display: inline;
+	list-style-type: none;
+	padding: 0px;
+	margin-left: 15px;
+}
+nav li a {
+	font-size: 1em;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: 'Fredericka the Great', Arial, sans-serif;
+	;
+	font-weight: bold;
+}
+
+
+nav a:link {
+	color: #EDEDEC;
+}
+
+nav a.current:link {
+	color: #999;
+}
+
+nav a:visited {
+	color: #EDEDEC;
+}
+
+nav a.current:visited {
+	color: #999;
+}
+
+nav a:hover {
+	color: #333;
+}
+
+nav a.current:hover {
+	color: #666;
+}
+
+
+#formholder div {
+	margin-bottom: 10px;
+}
+
+#imageholder {
+	margin-top: 10px;
+}
+
+.clearit {
+	clear: both;
+}
+
+
+/* __________________________________
+
+Media Queries begin here 
+
+*/
+
+
+/* Largest acceptable width for container - 1240px */
+
+@media (min-width: 1240px) {
+
+	body {
+		font-size: 110%;
+	}
+	label {
+		display: inline;
+	}
+	#respondwrap { 
+		width: 1240px; 
+		margin: 0 auto;
+		padding: 20px 40px;
+	}
+	
+	#logoholder {
+		width: 25%;
+		float: left;
+		margin-right: 20px;
+	}
+
+	header {
+		float: left;
+		margin: 0 0 10px 20px;
+	}
+	
+	#formholder {
+		margin-top: 30px;
+		clear: none;
+	}
+
+	#imageholder div {
+		float: left;
+		width: 16%;
+		margin: 0 .68% 0 0;
+	}
+
+	#imageholder .twocolimagebreak {
+		clear: none;
+		display: none;
+		margin: 0;		
+	}
+
+	#imageholder .threecolimagebreak {
+		clear: none;
+		display: none;
+		margin: 0;		
+	}
+    /* This selector below overrides the earlier margin setting above for the last child div of div#imageholder */
+	#imageholder div:last-child {
+		width: 16%;
+		margin: 0;
+	}
+	
+}
+
+/* Normal full size */
+
+@media (min-width: 850px) and (max-width: 1239px) {
+
+	body {
+		font-size: 100%;
+	}
+
+	label {
+		display: inline;
+	}
+
+	#respondwrap { 
+		width: auto; 
+		margin: 0 auto;
+		padding: 20px 40px;
+	}
+
+	#logoholder {
+		width: 25%;
+		float: left;
+		margin-right: 20px;
+	}
+
+	header {
+		float: none;
+		margin: 0 0 10px 20px;
+	}
+	
+	#formholder {
+		margin-top: 30px;
+		clear: both;
+	}
+	
+	#imageholder div {
+		float: left;
+		width: 16%;
+		margin: 0 .68% 0 0;
+	}
+
+	#imageholder .twocolimagebreak {
+		clear: none;
+		display: none;
+		margin: 0;		
+	}
+
+	#imageholder .threecolimagebreak {
+		clear: none;
+		display: none;
+		margin: 0;		
+	}
+
+	#imageholder div:last-child {
+		width: 16%;
+		margin: 0;
+	}
+
+}
+
+/* Smaller monitors and portrait view iPads */
+
+@media (min-width: 600px) and (max-width: 849px) {
+
+	body {
+		font-size: 90%;
+	}
+	
+	label {
+		display: inline;
+	}
+	
+	#respondwrap { 
+		width: auto; 
+		margin: 0 auto;
+		padding: 20px 4.71142520612485%; /* 40px/849px to start then gets smaller from there */
+	}
+
+	#logoholder {
+		width: 25%;
+		float: left;
+		margin-right: 20px;
+	}
+
+	header {
+		float: none;
+		margin: 0 0 0 10px;
+	}
+
+	#formholder {
+		margin-top: 30px;
+		clear: both;
+	}
+
+	#imageholder div {
+		float: left;
+		width: 30%;
+		margin: 0 2% 2% 0;
+	}
+
+	#imageholder .twocolimagebreak {
+		clear: none;
+		display: none;
+		margin: 0;
+	}
+
+	#imageholder .threecolimagebreak {
+		clear: both;
+		display: block;
+		margin: 0;
+	}
+
+	#imageholder div:last-child {
+		width: 30%;
+		margin: 0;
+	}
+
+		
+}
+
+/* iPhones and other smart phones and smaller tablets */
+
+@media (min-width: 400px) and (max-width: 599px) {
+	body {
+		font-size: 90%;
+	}
+
+	label {
+		display: inline;
+	}
+	
+	#respondwrap { 
+		width: auto; 
+		margin: 0 auto;
+		padding: 20px 4.71142520612485%;
+	}
+
+	#logoholder {
+		width: 25%;
+		float: left;
+		margin-right: 20px;		
+	}
+
+	header {
+		float: none;
+		margin: 0 0 10px 20px;
+	}
+	
+	#formholder {
+		margin-top: 20px;
+		clear: both;
+	}
+	
+	#imageholder div {
+		float: left;
+		width: 45%;
+		margin: 0 3% 3% 0;
+	}
+
+	#imageholder .twocolimagebreak {
+		clear: both;
+		display: block;
+		margin: 0;
+	}
+
+	#imageholder .threecolimagebreak {
+		clear: none;
+		display: none;
+		margin: 0;
+	}
+
+	#imageholder div:last-child {
+		width: 45%;
+		margin: 0;
+	}				
+}
+
+/* Smallest phone screen sizes */
+
+@media (min-width: 1px) and (max-width: 399px) {
+	body {
+		font-size: 80%;
+	}
+
+	label {
+		display: block;
+	}
+	
+	#respondwrap { 
+		width: auto; 
+		margin: 0 auto;
+		padding: 10px 3%;
+	}
+
+	#logoholder {
+		width: 100px;
+		float: left;
+		margin-right: 20px;		
+	}
+
+	header {
+		float: left;
+		margin: 0 0 10px 20px;
+	}
+
+	#formholder {
+		margin-top: 30px;
+		clear: both;
+	}
+
+	#imageholder div {
+		float: none;
+		width: 95%;
+		margin: 0 auto 3% auto;
+	}
+
+	#imageholder .twocolimagebreak {
+		clear: none;
+		display: none;
+		margin: 0;
+	}
+
+	#imageholder .threecolimagebreak {
+		clear: none;
+		display: none;
+		margin: 0;
+	}
+
+	#imageholder div:last-child {
+		width: 95%;
+		margin: 0 auto 0 auto;
+	}		
+}

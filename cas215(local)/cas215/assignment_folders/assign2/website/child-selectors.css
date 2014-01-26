@@ -1,0 +1,44 @@
+/*color codes both hexadecimal and rbg*/
+
+
+/*limited reset*/
+html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/*html5 display rule*/
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, nav, menu, nav, section, summary {
+	display: block;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+tr {
+	
+}
+
+td, th {
+		border: 1px solid black;
+		padding: 3px;
+}
+body > h1 { color:red;}
+
+
+div > h1 {color: green;}
+
+td:first-child {background-color:#aaa;}
+
+tr:nth-child(odd) { background-color:#fff}
+
+
+td + td { background-color:#ccc;}
+
+
+td + td + td{ background-color:#aaa;}
+
+td + td + td + td{ background-color:#999;}

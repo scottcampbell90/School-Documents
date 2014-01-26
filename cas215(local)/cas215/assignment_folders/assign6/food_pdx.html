@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+        <!--File Name: food_pdx.html-->
+	<!--Date: 5/13/13-->
+	<!--Programmer: Scott Campbell-->
+<html lang='en'>
+<head>
+    
+    <meta charset="UTF-8" />
+    
+   <title>PDX Food Newsletter</title>
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.goxoglecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <link rel="stylesheet" type="text/css" href="../../ /assign6/food_news.css" >
+    <script src="http://use.edgefonts.net/quantico.js"></script> 
+ 
+</head>
+<body>
+    <div class="wrapper">
+	
+	<header>
+	    <h1>PDX Food Newsletter</h1>
+	</header>
+	
+	<section>
+	    <h2>Slow Food of Portland</h2>
+	  
+	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.   Curabitur tellus quam, lacinia a blandit a, vestibulum non mi. Quisque sodales metus non lorem ullamcorper vel convallis nisi vulputate. </p>
+	    
+	    <h2>Portland's Best Restaurants</h2>
+	    
+            <table class="food"> 
+             <caption>Favorite Restaurants</caption>
+             <tr>
+                <th>Restaurant</th>
+                <th>Location</th>
+                <th>Type of Food</th>
+                <th>Price Range</th>
+              </tr>
+              <tr>
+                 <td>Toro Bravo</td>
+                 <td>120 NE Russell St</td>
+                 <td>Spanish cuisine</td>
+                 <td>$$</td>
+               </tr>
+               <tr>
+                 <td>Andina</td>
+                 <td>1314 NW Glisan</td>
+                 <td>Peruvian cuisine</td>
+                 <td>$$$$</td>
+               </tr>
+               <tr>
+                 <td>Tasty N Sons</td>
+                 <td>3808 North Williams Ave</td>
+                 <td>Traditional American</td>
+                 <td>$$</td>
+               </tr>
+               <tr>
+                 <td>Apizza Scholls</td>
+                 <td>4741 SE Hawthorne Blvd</td>
+                 <td>Pizza</td>
+                 <td>$$</td>
+               </tr>
+         </table>
+        </section>
+	<br>
+	     
+    <h1>Sign Up:PDX Food Newsletter</h1>
+ 
+    <section>
+	<form class="subform"  method="post" action="../../form.html">
+	 
+	    <p><label for="name" class="label">Your Name:</label>
+      <input type="text" name="name" id="name" >
+    </p>
+	     <p><label for="email" class="label">Email address:</label>
+	      <input type="text" name="email" id="email" >
+	     </p>
+	     
+	     <p><label for="password" class="label">Password:</label>
+	     <input type="password" name="password" id="password" >
+	     </p>
+	      
+	      <p>
+		    <span class="label">Prefered food type:</span>
+		    <label>
+		    <input name="genre" type="radio" value="mexican" />Mexican</label>
+		    <label>
+		    <input name="genre" type="radio" value="thai" />Thai</label>
+	
+		    <label>
+			<input name="genre" type="radio" value="indian" />Indian</label>
+		    <label>
+			<input name="genre" type="radio" value="nw" />Northwest</label>
+		
+		</p>
+       
+		<p>
+		   <label for="refer" class="label">Where did you hear about us? </label>
+		   <select name="refer" id="refer">
+		     <option value="null">Select One</option>
+       
+		     <option value="1">Friend</option>
+		     <option value="2">Willamette Weekly</option>
+		     <option value="3">Radio</option>
+		     <option value="4">Internet</option>
+		     <option value="5">Other</option>
+		</select>
+		</p>
+		<p>
+    
+		   <label for="comments" class="label">What do you want in your dining experience?</label>
+		   <textarea name="comments" cols="35" rows="4" id="comments"></textarea>
+	     
+		</p>
+	    
+	      <p>
+		<input type="submit" name="Submit" class="subscribe" value="Subscribe">
+	      </p>
+	    </form>
+	</section>
+	<footer>
+	    Contact: <a href="http://portlandfoodanddrink.com/">Portland Food & Drink</a> 
+	</footer>		
+    </div>
+</body>
+</html>

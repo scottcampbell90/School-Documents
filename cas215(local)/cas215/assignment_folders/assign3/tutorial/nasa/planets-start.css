@@ -1,0 +1,184 @@
+/*color codes both hexadecimal and rbg*/
+/*kuler.adobe.com/ Nasa Dark Color Scheme
+ red:		#F21D2F (242,29,47)
+ magneta:	#8C3555 (140,53,85)
+ purple:	#654673 (101,70,115)
+ blue:		#0367A6 (3,103,66)
+ off-white:	#F2F2F2 (242,242,242
+ yellow:        #F2D92F (242,217,47)
+ green		#406A37 (64,106,55)
+*/
+
+/*limited reset*/
+html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/*html5 display rule*/
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, nav, menu, nav, section, summary {
+	display: block;
+}
+/*resets*/
+body{
+	line-height: 1.2;
+}
+
+ol{
+	margin-left: 1.4em;
+	list-style: decimal;
+}
+ul{
+	margin-left: 1.4em;
+	list-style: square
+}
+table{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*font face*/
+@font-face {
+    
+
+}
+/*general tags*/
+body{
+background-color: #000;
+	
+}
+.wrapper{
+	width:90%;
+	margin:auto;
+	background-color:#0367A6;
+	
+}
+section{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background-color:#fff;
+	width:90%;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;	
+	
+}
+
+h1, h2{
+	font-family: Copperplate, fantasy;
+	padding-left: 5px;
+	font-size:2em;
+}
+
+h1{
+	text-align:center;
+	color:#fff;
+	text-shadow: 4px 3px 6px rgba(0, 0, 0, .5);
+
+}
+
+h2 {
+	overflow: hidden;
+	color: #8C3555;
+	background-color: #99f;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #8c3555;
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-top-color: #8c3555;
+}
+
+p{
+	padding:5px;
+		text-indent: 10px;	
+
+	
+}
+
+
+
+figure{
+	float:right;
+	width: 35%;
+	background-color:#F2D92F;
+	border: solid black thin;
+	padding-top: 0px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+}
+
+figcaption{
+	color:#654673;
+	font-weight: bold;
+	font-size: 0.8em;
+}
+img{
+	margin-left:15%;
+	border: thin solid #99f;
+	margin: 5px auto;
+	display: block;
+	border-radius: 5px;
+}
+/*lists*/
+ol,ul{
+	margin-left: 40px;
+	font-weight:bold;
+	color:#8C3555;
+	padding:10px;
+}
+ul{
+	list-style-image: url(../../../../%20/assign3/tutorial/nasa/images/bullet.png);	
+}
+
+li{
+	
+}
+
+/*classes*/
+h2.figure{
+	color:#fff;
+	background-color:#654673;
+	text-align:center;
+	border:thin solid #99f;
+	font-size:1.8em;
+	border-radius: 10px;
+	
+	
+	
+}
+
+.banner{
+	background-image:url(../../../../%20/assign3/tutorial/nasa/images/galaxy-banner.jpg);
+	
+		
+}
+
+/*pseudo elements*/
+p:first-letter{
+	background-color:#000;
+	color:#f00;
+	font-size:1.5em;
+}
+footer{
+	font-family:Arial, Helvetica, sans-serif;
+	width:auto;
+	background-color:#F2D92F;
+	color: #00f;
+	text-align:center;
+	border: solid thin #0367a6;
+	padding-top:5px;
+	padding-bottom:5px;
+		
+}
+footer a{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#99f;
+	border-
+	
+}
+footer a:hover{
+	
+}

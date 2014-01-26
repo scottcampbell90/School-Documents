@@ -1,0 +1,233 @@
+**********************************************************************
+				Creating Correct Menu nav bars
+				floated and inline block
+				
+				css3 the missing manual
+				
+**********************************************************************
+
+
+
+<ul class="nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+The CSS varies a bit depending on whether you want a horizontal of vertical naviga- tion bar. In either case, you need to do two things:
+• Remove the bullets. Unless the navigation bar is supposed to look like a bul- leted list, remove the bullets by setting the list-style-type property to none:
+    ul.nav {
+      list-style-type: none;
+}
+• Eliminatepaddingandmargins.Sincebrowsersindentlistitemsfromtheleft, you need to remove this added space as well. Some browsers do the indenting using padding, and others use margin, so you need to set both to 0:
+ul.nav { list-style-type: none; padding-left: 0; margin-left: 0;
+}
+
+vertical nav:
+
+1. Displaythelinkasablock.
+Since the <a> tag is an inline element, it’s only as wide as the content inside it. Buttons with different length text (like Home and Our Products) are different widths. The staggered appearance of different width buttons stacked on top of each other doesn’t look good, as you can see in #1 in Figure 9-5. In addition, top and bottom padding and margins have no effect on inline elements. To get around these limitations, style the link as a block element:
+    ul.nav a {
+      display: block;
+}
+
+2. Constrainthewidthofthebuttons.
+Making links block-level elements also means they’re as wide as the tag they’re nested in. So when they’re just sitting in a page, those links stretch the width of the browser window (#2 in Figure 9-5). You have several ways to make them a little narrower. First you can just set the width of the <a> tag. If you want each button to be 8 ems wide, for example, then add that to the width property:
+ul.nav a { display: block; width: 8em;
+}
+Setting a width for any of the tags that wrap around those links—such as the <li> or <ul> tags—also works.
+
+If the button text occupies only one line, you can also center the text vertically so there’s equal space above and below the link text. Just add a height to the link and set its line-height property to the same value:
+a{
+height: 1.25em; line-height: 1.25em;
+}
+
+
+******tip********
+When Borders Bump
+If the buttons in your nav bar touch and you apply a border around each link, then the borders double up. In other words, the bottom border from one button touches the top border of the next button.
+To get around this, add the border to only the top of each link. That way, you’ll get just one border line where the bottom from each button touches the top from the next.
+This workaround, however, leaves the entire nav bar borderless below the last link. To fix that problem, you can either create a
+class with the correct bottom border style and apply it to the last link, or better yet, add a bottom border to the <ul> tag that encloses the nav bar. (You’ll see this trick in action in this chapter’s tutorial on page 310.)
+The same holds true when you have horizontal links. In this case the right and left borders of adjacent buttons touch. Just turn off the left borders on the buttons and add a left border to the containing tag—the <ul> tag, for example.
+******tip********
+
+USING DISPLAY: INLINE AND DISPLAY: INLINE-BLoCK
+The simplest method of creating a horizontal navigation bar involves changing the display property of the list items from block to inline. It’s easy to do using CSS.
+1. Create a style for the unordered list to remove any padding, margins, and bullets.
+    ul.nav {
+      margin-left: 0px;
+      padding-left: 0px;
+      list-style: none;
+      border-bottom: 1px dashed #000;
+}
+
+2. Makethelistitemsinlineelements.
+Inline elements don’t create a line break before or after them as block-level elements do. Setting the display property of the <li> tags to inline makes them appear one beside the other (#2 in Figure 9-6).
+    .nav li { display: inline; }
+    
+You need to make sure you don’t have too many buttons, though. If they don’t all fit side by side, some will drop down below the first row.
+
+3. Stylethelinks.
+You can remove the underline beneath the links and add a border around them instead. You can also add background color or a background image to provide visual depth. Add padding if you need more room around each link’s text. If you want some space between each button, then apply a right margin. The following style gives links a button-like appearance, as shown in #3 and #4 in Figure 9-6:
+    .nav a {
+      display: inline-block;
+      border: 1px dashed #000;
+      border-bottom: none;
+      padding: 5px 15px 5px 15px;
+      background-color: #EAEAEA;
+      text-decoration: none;
+      color: #333;
+}
+
+*****tip*****
+To make this horizontal nav bar appear in the center of the page, add text-align: center; to the <ul> tag’s style. In fact, this is one benefit of this technique over the float technique described next—when you use inline and inline-block, you can center your nav bar, which you can’t do with floats.
+
+*****eliminating white space with display inline block*********
+Web browsers treat the carriage return after one </li> and before the next <li> as a space. There are a couple of ways to remove this space:
+• Put the closing </li> and opening <li> on the same line like this:
+     <ul class="nav">
+     <li><a href="index.html">Home</a></li><li>
+     <a href="news.html">News</a></li><li>
+     <a href="reviews.html">Reviews</a></li>
+     </ul>
+     
+     
+This kind of code isn’t normally written this way, and a program like Dream- weaver definitely wouldn’t write it this way. To remove the space, you have to get in and change the code by hand.
+• Add a negative right margin to the list items. For example, you could change the li style in Step 2 above to this:
+     .nav li {
+         display: inline;
+         margin-right: -5px;
+     }
+The negative margin value basically pulls the following list item over 5 pixels to close up the gap between the buttons. The problem with this technique is that the exact value you use will vary depending upon the size of the text—5 pixels may or may not work—so you’ll need to experiment to get the proper value.
+
+
+
+1. Floatthelistitems.
+Adding a left float to the <li> tags removes them from the normal top-down
+flow of elements:
+     .nav li { float: left; }
+The floated list items (along with their enclosed links) slide right next to each other, just like the images in the photo gallery tutorial on page 278. (You can just as easily float them right if you want those buttons to align to the right edge of the screen or containing sidebar.)
+
+2. Add display: block to the links.
+Links are inline elements, so width values (as well as top and bottom padding and margins) don’t apply to them. Making a browser display the links as block elements lets you set an exact width for the button and add a comfortable amount of white space above and below each link:
+    ul.nav a { display: block; }
+    
+3. Stylethelinks.
+Add background colors, borders, and so on.
+
+4. Addawidth.
+
+If you want the nav buttons to have identical widths, set a width for the <a> tag. The exact width you use depends on how much text is in each button. Obviously for a link like Corporate Philosophy, you need a wider button.
+If you want each button to be simply the width of the text inside, don’t set a width. You can, however, add left and right padding to give the text some breathing room.
+
+5. Add overflow: hidden to the <ul> tag style.
+
+If it has a border, background color, or image, you should need to “contain the float”—that is, the floated list items inside the <ul> will appear to pop out of the bottom of the list (and outside the <ul> tags border or background color).
+    ul.nav {
+      overflow: hidden;
+}
+
+
+******************menu references******************
+Pop-up Menus
+How do I create those cool pop-up menus that display a sub- menu of links when someone rolls his mouse over a button?
+Navigation bars that have multiple levels of menus that pop up or slide out are extremely popular. They’re a perfect way to cram a lot of link options into a compact navigation bar. You can create them in a couple of ways.
+First, there’s the CSS-only approach. You can find a basic tutorial on the process at http://line25.com/tutorials/how- to-create-a-pure-css-dropdown-menu. For a spiffy CSS menu that uses CSS transitions to animate the appearance and disappearance of the drop-down menus, check out www .red-team-design.com/css3-animated-dropdown-menu.
+If you’re not the do-it-yourself type, or if you’re just in a hurry, you can use the free Pure CSS Menu generator—a wizard-like web page that produces the necessary HTML and CSS for you: http://purecssmenu.com.
+The one disadvantage to the CSS approach is that the sub- menus disappear instantly if your visitor’s mouse strays. You can hope that all your visitors have excellent reflexes, or you can try a different approach: Use CSS to style the buttons and JavaScript to control the actions of the submenus. For a very simple JavaScript menu, try the jQuery Navigation Plug-in at https://github.com/dansdom/plugins-navigation.
+
+
+Here are the styles required to create the navigation bar pictured in Figure 9-7. Notice that the buttons are the same width, and the button text is centered.
+    .nav {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+      border-bottom: 3px solid rgb(204,204,204);
+      overflow: hidden;
+}
+    .nav li {
+      float: left;
+}
+    .nav a {
+      width: 12em;
+      display: block;
+      border: 3px solid rgb(204,204,204);
+      border-bottom: none;
+      border-radius: 5px 5px 0 0 ;
+      padding: 10px;
+      margin-right: 5px;
+      background-color: rgb(95,95,95);
+      background-image: -webkit-linear-gradient(rgb(175,175,175), rgb(95,95,95));
+      background-image: -moz-linear-gradient(rgb(175,175,175), rgb(95,95,95));
+      background-image: -o-linear-gradient(rgb(175,175,175), rgb(95,95,95));
+      background-image: linear-gradient(rgb(175,175,175), rgb(95,95,95));
+      text-decoration:none;
+      color: white;
+      text-align: center;
+      font-family: Arial, Helvetice, sans-serif;
+      font-weight: bold;
+}
+
+************preloading rollovers with javascript and sprites*******************
+
+Here’s how to implement the method:
+1. In your favorite image-editing program, create one image with different versions of the button.
+You might create a regular state, a rollover state, and maybe even a “you are here” state. Place the images one on top of the other, with the regular link im- age on top and the rollover image below.
+ NoTE  FireworksCS6hasabuilt-intoolforcreatingCSSsprites.Therearealsomanyonlinetoolstohelp you create them: SpritePad (http://spritepad.wearekiss.com) is one example.
+2. Measurethedistancesfromthetopoftheentiregraphictothetopofeach image.
+In Figure 9-8 (top), the rollover image’s top edge is 39 pixels from the top of the graphic.
+3. Create a CSS style for the regular link. Include the image in the background and place it at the left top of the style (Figure 9-8, middle).
+Your style may look something like this:
+     a { background: #E7E7E7 url(images/pixy.png) no-repeat left top; }
+4. Create the :hover style.
+Here’s the trick: Use the background-position property to shift the graphic upwards, so the first image disappears and the rollover image becomes visible (Figure 9-9, bottom).
+     a:hover { background-position: 0 -39px; }
+Besides preventing the dreaded download delay, this technique helps you keep your navigation graphics organized in a single file.
+
+************preloading rollovers with javascript and sprites*******************
+
+
+
+***************styling links to other  Links to other Websites******************
+Links to other Websites
+
+a[href^='http://']
+
+The ^= translates to “begins with,” so this selector matches links like <a href="http://
+www.google.com/">, <a href="http://www.sawmac.com/css3/">, and so on.
+
+If you happen to use absolute links to point to other pages in your site, then you’ll need to add another style to “turn off” the styling—otherwise, you’ll end up high- lighting those links as external links, when in reality they’re just links within your site. This second style just uses a more detailed version of the selector listed above. For example, if your site is located at www.mysite.com, then you can create a selector that applies to those links like this: a[href^='http://www.mysite.com']. Putting this all together, if you want to add a globe icon next to external links, but not for links within your site, you can create these two styles:
+     a[href^='http://'] {
+       background: url(images/globe.png) no-repeat center right;
+       padding-right: 15px;
+}
+     a[href^='http://www.mysite.com'] {
+       background: none;
+         padding-right: 0;
+}
+       
+IfyouwanttogetreallyfancywithyourCSS,youcancombinetheattributeselectorwiththeCSS3 
+
+:not() selector to create a single style that will affect all absolute URLs except ones pointing to your own site:
+
+
+        a[href^='http://']:not(a[href^='http://www.mysite.com'])
+        
+        
+This crazy-looking selector translates to “select all links that begin with http://, but not the ones that begin with http://www.mysite.com.” The downside of this technique is that Internet Explorer 8 and earlier don’t understand the :not() selector.
+
+
+***************************styling email links*******************
+
+Email Links
+Email links are another special kind of link. Normally, email links look just like any other link—blue and underlined. However, they don’t act like any other link. Click- ing one launches a visitor’s email program, and some people find starting up a new program while browsing a website really distracting, so let ’em know it’s for email.
+The same basic technique described for external links above applies. Since all email links begin with mailto:, you can create a selector like the following to create a style to format just email links:
+    a[href^='mailto:']
+    
+    CSS provides an attribute selector that lets you find attributes that end with specific information. So to create a style for links to PDF files, use this selector:
+a[href$='.pdf']
+$= means “ends in,” so this selector means “select all links whose href attribute ends
+in .pdf.” You can create similar styles for other types of files as well:
+    a[href$='.zip'] /* zip archive */
+    a[href$='.doc'] /* Word document */
+     

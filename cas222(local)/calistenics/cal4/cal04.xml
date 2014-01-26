@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nifty_employees>
+  <employee>
+    <employee_name>Teresa Fredricks</employee_name>
+    <department>Human Resources</department>
+    <position>Human Resources Director</position>
+    <email>tfredr@nifty.com</email>
+    <extension>4321</extension>
+    <picture>assets/tfredr.jpg</picture>
+  </employee>
+  <employee>
+  <employee_name>James Singh</employee_name>
+  <department>Human Resources</department>
+  <position>Human Resources Assistant</position>
+  <email>jsingh@nifty.com</email>
+  <extension>4321</extension>
+  <picture>assets/jsingh.jpg</picture>
+  </employee>
+  <employee>
+  <employee_name>Jennifer James</employee_name>
+  <department>Sales</department>
+  <position>Sales Associate</position>
+  <email>jjames@nifty.com</email>
+  <extension>4321</extension>
+  <picture>assets/jjames.jpg</picture>
+  </employee>
+  <employee>
+  <employee_name>Robert Gonzoles</employee_name>
+  <department>Sales</department>
+  <position>Sales Manager</position>
+  <email>rgonzoles@nifty.com</email>
+  <extension>4321</extension>
+  <picture>assets/rgonza.jpg</picture>
+  </employee>
+  <employee>
+  <employee_name>Archie Sanders</employee_name>
+  <department>Sales</department>
+  <position>Sales Assosiate</position>
+  <email>asandersr@nifty.com</email>
+  <extension>4321</extension>
+  <picture>assets/tfredr.jpg</picture>
+  </employee>
+</nifty_employees>
+

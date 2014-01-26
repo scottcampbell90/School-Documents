@@ -1,0 +1,281 @@
+@charset "UTF-8";
+/*robot competition colors
+Crimson: rgb(120,0,0) #780000
+Crimson darker: #710000
+red: rgb (153,0,0)#990000
+beige: rgb (255,227,210)#C7B1A4
+white gray: rgb (238,238,238)#EEEEEE
+gray: rgb (82,82, 82) #525252
+dk blue: rgb (3,62,140) #033E8C
+lite blue: (5,11,250) #056FFA
+off-black: rgb(36,33,33) #242121
+*/
+
+
+
+/*limited reset*/
+html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+a {
+	text-decoration: none;
+}
+/*html5 display rule*/
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, nav, menu, nav, section, summary {
+	display: block;
+}
+body {
+	background-color: #033E8C;
+	text-align: center;
+	font: 100% Georgia, "Times New Roman", Times, serif;
+}
+nav ul, ul.menu {
+	list-style: none;
+}
+/* layout styles */
+.wrapper {
+	width: 85%;
+	margin: 0 auto;
+	padding: 0 50px;
+	text-align:left;
+	position: relative;
+	background: url(../../%20/assign7/images/NASAlogo.png) top right no-repeat, url(../../%20/assign7/images/FClogo.png) top left no-repeat, #EEEEEE;
+}
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+header.mainHeader {
+	padding: 75px 0 0 175px;
+	position: relative;
+	border-bottom: 2px solid #7f7f7f;
+	margin-bottom: 1em;
+}
+header.mainHeader h1 span {
+	color:#710000;
+	margin-left: 300px;
+}
+header.mainHeader hgroup h1 {
+	font-size: 2em;
+	color: #033E8C;
+	text-transform: uppercase;
+	font-family: "Arial Black", Arial, serif;
+	font-weight: normal;
+	margin-top: .2em;
+	text-shadow: 2px 2px 2px #333;
+}
+header.mainHeader hgroup h2 {
+	color:#242121;
+	font-weight: bold;
+	font-size: 1.5em;
+	font-family: Garamond, Georgia, serif;
+	text-align: left;
+	padding-bottom: 5px;
+}
+header.mainHeader nav {
+	position: absolute;
+	left: 225px;
+	top: 0;
+	padding-top: 15px;
+}
+header.mainHeader nav h1 {
+	position: absolute;
+	left: -2000em;
+}
+header.mainHeader ul {
+	float: left;
+}
+header.mainHeader ul li {
+	float: left;
+}
+header.mainHeader ul li a {
+	font-family: "Arial Black", Arial, sans-serif;
+	font-size: 1.2em;
+	color:  #710000;
+	padding: 0 20px;
+	border-right: 1px solid #000;
+	text-decoration: none;
+	letter-spacing: .2em;
+}
+header.mainHeader ul li a.last {
+	border: none;
+}
+header.mainHeader ul li a:hover {
+	color: #EEEEEE;
+	background-image: linear-gradient(right bottom, #990000 21%, #056FFA 83%);
+	background-image: -o-linear-gradient(right bottom, #990000 21%, #056FFA 83%);
+	background-image: -moz-linear-gradient(right bottom, #990000 21%, #056FFA 83%);
+	background-image: -webkit-linear-gradient(right bottom, #990000 21%, #056FFA 83%);
+	background-image: -ms-linear-gradient(right bottom, #990000 21%, #056FFA 83%);
+	background-image: -webkit-gradient(  linear,  right bottom,  left top,  color-stop(0.21, #990000),  color-stop(0.83, #056FFA)  );
+}
+section.main {
+	float: left;
+	width: 50%;
+	padding: 0 10px 0 25px;
+	margin-bottom: 2em;
+	background: #EEEEEE;
+	border-right: 1px solid #990000;
+}
+section.main article h1 {
+	font-weight: normal;
+	font-family: "Arial Black", Arial, serif;
+	color: #710000;
+	font-size: 2em;
+	margin-bottom: .6em;
+	margin-top: .2em;
+	text-shadow: 1px 1px 1px #333;
+}
+section.main caption {
+	text-transform: uppercase;
+	font-family: MidoMedium, Georgia, serif;
+	color: #033E8C;
+	font-weight: bold;
+	font-size: 1em;
+	text-align: center;
+	margin-bottom: 5px;
+}
+section.main table {
+	width: 425px;
+	border-collapse:collapse;
+	background: #D1C9B2;
+	border: #242121 1px groove;
+	margin: .5em 0 1em;
+}
+section.main table.main th, section.main table.main td {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: .8em;
+	padding-left: 1em;
+	text-align: left;
+	line-height: 3;
+}
+ section.main table tr:nth-child(even) {
+ background-color: #C7B1A4;
+ color: #fff;
+}
+section.main table tr:first-child {
+	background-color: rgba(5, 11, 250, .5);
+	color: #990000;
+	text-align: center;
+}
+section.main table.main th {
+	border-right: solid 1px #242121;
+	background-color: #990000;
+}
+section.main p {
+	color: #242121;
+	line-height: 1.6;
+	margin-bottom: 1em;
+}
+section.main h2 {
+	font-size: 1em;
+	color: #033E8C;
+}
+section.main img {
+	float:right;
+	padding:3px;
+	border: 2px #033E8C groove;
+	background-color: #710000;
+	box-shadow: 2px 2px 2px #710000;
+}
+/*column text styles*/
+.textCol {
+	-moz-column-count: 2;
+	-moz-column-gap: 1em;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 1em;
+	column-count: 2;
+	column-gap: 1em;
+	text-align: justify;
+}
+aside.competition {
+	float: right;
+	width:50%;
+	margin: 0 -.5em 2em 0;
+	font-size: 90%;
+}
+aside.competition h1 {
+	font-size: 2em;
+	font-weight: normal;
+	font-family: "Arial Black", Arial, serif;
+	line-height: 1;
+	color: #033E8C;
+	margin-bottom: .5em;
+	text-shadow: 1px 1px 1px #056FFA;
+}
+aside.competition h2 {
+	font-size: 1.2em;
+	margin-bottom: .2em;
+	color: #710000;
+}
+aside.competition h3 {
+	font-size: 1.1em;
+	color: #525252;
+	font-weight: normal;
+	margin-bottom: .2em;
+}
+aside.competition p {
+	line-height: 1.8;
+	color: #242121;
+	margin-bottom:1em;
+}
+aside.competition .news {
+	background: rgba(36, 33, 33, .2);
+	border: 1px groove #033E8C;
+	padding: 1em 1em;
+	margin-bottom: 1.5em;
+	-webkit-border-top-left-radius: 0px;
+	-webkit-border-top-right-radius: 0px;
+	-webkit-border-bottom-right-radius: 20px;
+	-webkit-border-bottom-left-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 20px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 0px;
+}
+aside.competition .news p.subtitle {
+	font-size: 1.5em;
+	color: #033E8C;
+}
+aside.competition .news p.pubdate {
+	text-align:right;
+	color: #666;
+	font-size: .9em;
+	font-style: italic;
+}
+aside.competition video {
+	margin: .5em 0 0 .25em;
+	padding: .2em;
+	background-color: #710000;
+}
+aside.competition span {
+	color: #710000;
+	font-variant: small-caps;
+}
+/*footer styles*/
+
+
+footer {
+	border-top: 2px solid #990000;
+	padding: 2em;
+	clear: both;
+}
+footer p {
+	text-align: center;
+	font-style: italic;
+	margin-bottom: 1em;
+	color: #033E8C;
+}
+footer a {
+	text-decoration: none;
+	color:#780000;
+}
+footer a:hover {
+	color: #525252;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>nifty | form</title>
+
+</head>
+
+<body>
+
+<form name="contact" method="post" action"assets/nifty-process.php">
+  <table width="600px" border="0">
+    <tr>
+      <td><label for="yourname">Your Name</label></td>
+      <td><input type="text" name="yourname" id="yourname" requuired></td>
+    </tr>
+    <tr>
+      <td><label for="youremail">Your Email</label></td>
+      <td><input type="email" name="youremail" id="youremail" required></td>
+    </tr>
+    <tr>
+      <td><label for="tripdate">Around what date would you like to take a trip?</label></td>
+      <td><input type="date" name="tripdate" id="tripdate"></td>
+    </tr>
+    <tr>
+      <td><label for="tours[]">Which tour(s) interest you?
+          <br>
+          Hold down ctr (windows) cmd (mac) to select multiple.
+      </label></td>
+      <td><select name="tours" id="tours">
+        <option value="Paris">Paris, France</option>
+        <option value="Rome">Rome, Italy</option>
+        <option value="Greece">Athens, Greece</option>
+        <option value="Agra">Taj Mahal, India</option>
+        <option value="Japan">Kyoto, Japan</option>
+        <option value="All">All of the above</option>
+        <option value="Other">Other (as described in comments)</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td><label for="comments">Is there any other travel info we can provide you?</label></td>
+      <td><textarea name="comments" id="comments" cols="45" rows="5"></textarea></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="submit" id="submit" value="Click to Send!"></td>
+    </tr>
+  </table>
+</form>
+
+
+
+
+
+</body>
+</html>

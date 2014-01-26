@@ -1,0 +1,177 @@
+/*gallery css*/
+/*color codes both hexadecimal and rbg*/
+/*Add color scheme here
+ Garnet Jasper Jade
+dk red: #4C0016 (76,0,22)
+off-white: #FFF7EB (255,247,235)
+beige: #DCCEA7 (220,206,167)
+tan: #A17345 (161,115,69)
+teal: #104F53 (16,79,83)
+lite blue: #2CD8E3 (44,216,227)
+Dk olive green: #4C483A (76,72,58)
+
+gallery.css
+
+May 1st 2013
+
+Scott Campbell
+
+*/
+
+
+/*limited reset*/
+html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/*html5 display rule*/
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, nav, menu, nav, section, summary {
+	display: block;
+}
+
+body{
+	
+	background: url(../../%20/assign4/images/universe.png) left top repeat,url(../../%20/assign4/images/freedom.png) right top repeat;
+	/*background-color:rgba(16,79,83,.5);*/
+	
+}
+/*general selectors*/
+.wrapper{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #A17345;
+	box-shadow: 3px 3px 3px #066;
+}
+body{
+	font-family: "Trebuchet MS", Verdana, sans-serif;
+	font-size: 1em;
+	background-color:#735612;
+	line-height: 1.2em;
+	margin-top: 0px;
+}
+h1,h2,h3,h4{
+	letter-spacing: .1em;
+	font-family: Verdana, Geneva, sans-serif;
+	margin: 5px;
+}
+h1{
+	font-size: 2em;
+	font-weight: bold;
+	color: #4C0016;
+	text-align: center;
+	font-variant: normal;
+	margin: 20px;
+	padding: 20px;
+	text-shadow: 1px 1px 1px #333;
+	background-repeat: no-repeat;
+	background-image: url(../../%20/assign4/images/reuse-r.png) , url(../../%20/assign4/images/recycle-r.png);
+		background-position: top right, top left;
+
+}
+
+
+h2 {
+	font-size: 1.75em;
+	color: #4C0016;
+	font-weight: bold;
+}
+p{
+	color: #FFF7EB;
+	font-size: 1em;
+	margin: 5px;
+	line-height: 125%;
+}
+.content{
+	width: 650px; 
+	background-color:#4C483A;
+	margin:7px;
+	padding:3px;/*
+	overflow: */
+	border:solid thin #4C483A ;
+	border-top: solid 8px #0FF;
+	borer:solid thin #000;
+	border-radius: 0px 0px 10px 0px;
+}
+
+figure.special{
+	float: right;
+	width:300px;
+	/*add gradient*/
+	background-image: -webkit-gradient(
+	linear,
+	right bottom,
+	left top,
+	color-stop(0.16, rgb(120,74,0)),
+	color-stop(0.41, rgb(255,255,255)),
+	color-stop(0.69, rgb(6,149,189))
+);
+	border-radius: 10px;
+	border: 1px solid white;
+	margin:	15px ;
+}
+figure img.special{
+	margin-left:10%;
+	margin-right:10%;
+	margin-top:5%;
+	margin-botton:10%;
+	border: 5px solid #0FF;
+	background-color: #000 ; 
+	border-radius: 15px;
+	box-shadow: inset 1px 1px 1px #333;
+}
+figcaption.special{
+	text-align:center;
+	color: #4C483A;
+	
+}
+
+.gallery{
+	clear:left;
+	width:650px;
+	background-color:#DCCEA7;
+	margin: 10px;
+	padding:10px;
+	border: 2px solid black;
+	border-radius: 0 20px 10px;
+	
+}
+
+figure img{
+	border: 2px solid #4C483A;
+	background-color: #000;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 1px 1px 1px #000;
+	}
+
+figure {
+	width:25%;
+	float:left;
+	margin: 20px;
+}
+figcaption {
+	font-weight:bold ;
+	text-align: center;
+	color:black;
+}
+
+ footer{
+	 clear:left;
+	margin: 5px;
+	text-align:center; 
+	border: solid 2px black;
+	border-bottom: solid 2px #4C483A;
+	background-color:#B67A11;
+ }
+ footer a{
+	text-decoration: underline;
+	font-weight: bold;
+	color:#B67A11;
+}
+footer a:hover{
+	color:
+	letter-spacing: 
+}

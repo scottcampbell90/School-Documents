@@ -1,0 +1,543 @@
+Transforms:
+
+CSS3 introduces several properties that transform a web page element, by either rotating it, scaling it, moving it, or distorting it along its horizontal and vertical axes (a process called skewing). You can use a transform, for example, to provide a slight tilt (rotation) to a navigation bar, or make an image get twice as big when a visitor mouses over it. You can even combine multiple transformations for some wild visual effects.
+The basic CSS property to achieve any of these changes is the CSS transform prop- erty. You use this property by supplying the type of transformation you want and a value indicating how much to transform the element. For example, to rotate an ele- ment, you supply the keyword rotate, followed by the number of degrees to turn it:
+     transform: rotate(10deg);
+     
+The above declaration rotates the element 10 degrees clockwise.
+CSS transforms are relatively new and, for that reason, aren’t supported in all browsers. While Internet Explorer 9, Safari, Chrome, Firefox, and Opera support 2D transforms, Internet Explorer 8 and earlier don’t. What’s more, you need to use vendor prefixes for all current browsers. So, to get the above code working, you need to rewrite it like this:
+     -webkit-transform: rotate(10deg);
+     -moz-transform: rotate(10deg);
+     -o-transform: rotate(10deg);
+     -ms-transform: rotate(10deg);
+     transform: rotate(10deg);
+     
+Rotate:
+
+The transform property’s rotate function is easy to understand: you give it a degree value from 0 to 360, and the browser rotates that element the specified number of degrees around a circle (see Figure 10-2). To specify a degree value, use a number followed by deg. For example, to rotate an element 180 degrees, add this declaration:
+     transform: rotate(180deg);
+     
+You can even use negative numbers to rotate the element counter-clockwise. For example, the element in the top middle of Figure 10-2 is rotated 45 degrees counter- clockwise like this:
+     transform: rotate(-45deg);
+     
+Scale:
+
+You can also resize an element, making it bigger or smaller using the scale func- tion (see Figure 10-3). For example, to make an element twice as big, you add this declaration:
+     transform: scale(2);
+     
+For example, say you have a link on a page with the .button class applied. You can create a simple style like this to format that button:
+     .button {
+       font: .9em Arial, Helvetica, sans-serif;
+       border-radius: .5em;
+       background-color: rgb(34,255,23);
+       border: 1px solid rgba(0,0,0,.5);
+       padding: .5em;
+}
+To really emphasize that button, you can make it get slightly bigger when a visitor mouses over it, like this:
+     .button:hover {
+       -webkit-transform: scale(1.2);
+       -moz-transform: scale(1.2);
+       -o-transform: scale(1.2);
+       -ms-transform: scale(1.2);
+       transform: scale(1.2);
+}
+When the visitor mouses off the button, the transform is removed and the button returns to its regular size. On page 345, you’ll even learn how you can animate this change in size by using CSS transitions.
+
+You can even scale the horizontal and vertical dimensions separately. To do this, supply two values separated by a comma inside the parentheses; the first number is the horizontal scale, and the second is the vertical scale. For example, to make an element half as wide but twice as tall, use this declaration:
+     transform: scale(.5,2);
+     
+You can see the effect at bottom left in Figure 10-3.
+
+CSS3 also provides separate functions for horizontal and vertical scaling: scaleX scales along the horizontal axis, while scaleY scales vertically. For example, to make an element twice as tall without changing its width, you’d write this:
+     transform: scaleY(2);
+     
+But to make an element three-and-a-half times as wide, but not taller or shorter, you’d use:
+    transform: scaleX(3.5);
+    
+There’s another visual trick that scaling offers: the ability to flip an element upside down and backwards. No one’s quite sure what branch of mathematics the W3C used to come up with this system, but if you use a negative number with scale, you actually flip an element around. For example, here’s how to flip an element upside down and left to right:
+    transform: scale(-1);
+    
+This produces the image pictured in Figure 10-4, left. You can also flip the element on only one axis. In the fight image in Figure 10-4, the image is flipped only on its horizontal axis. Flipping the element along its vertical axis produces the middle image:
+    transform: scale(-1,1);
+    
+It produces the effect of a mirror held to the side of the element, or like you’ve flipped the element over and are looking through its back. What fun!
+
+
+Translate:
+
+The transform property’s translate function simply moves an element from its current position a set amount left or right and up or down. By itself, it’s really not that useful. As you read on page 335, when a web browser transforms an element, it doesn’t rearrange the page; it lays the page out as if the element had no trans- formation. Accordingly, when you move a div or other tag, using the translate function, the browser leaves an empty space where the tag would normally appear,
+and then draws the element in its new position (see Figure 10-5). If you simply want to position an element on the page, you can use absolute or relative positioning as described in Chapter 15.
+
+However, translate does come in handy when you want to make subtle movements in response to a hover or click. For example, in many user interface designs, when you click a button, it moves slightly down and to the left, simulating the look of a real 3D button being pressed into a keypad. You can simulate this effect using the translate function and the :active state of a link:
+    .button:active {
+      -webkit-translate(1px,2px);
+      -moz-translate(1px,2px);
+      -o-translate(1px,2px);
+      -ms-translate(1px,2px);
+        translate(1px,2px);
+    }
+    
+The translate function takes two values: the first specifies the horizontal movement and the second the vertical movement. In this example, clicking an element with the .button class moves that element one pixel to the right and two pixels down. Use a negative number for the first value to move the element to the left; use a negative number for the second value to move the element up.
+You’re not limited to pixel values either. Any valid CSS length value—px, em, %, and so on will work.
+
+CSS3 also provides two additional functions for moving an element just to the left or right—translateX—and up or down—translateY. For example, to move an element up .5 ems, use the translateY function like this:
+    transform: translateY(-.5em);
+    
+The real fun with the translate function is when used with CSS transitions. With the CSS transition, you can then animate the movement of the element, so that it travels across the screen. You’ll learn how to do that on page 345.
+
+Skew:
+
+Skewing an element lets you slant it on its horizontal and vertical axes: this can give an element a three-dimensional feel (see Figure 10-6). For example, to slant all the vertical lines so that they lean to the left 45 degrees (as in the first image in Figure 10-6), you’d write this code:
+    transform: skew(45deg, 0);
+    
+To do the same along the Y axis (middle image in Figure 10-6), you’d write this:
+    transform: skew(0,45deg);
+    
+You can skew an element on both axes at once. For example, here is the code used to produce the third image in Figure 10-6:
+    transform: skew(25deg,10deg);
+    
+The first value is a degree value from 0deg to 360deg, proceeding in a counter- clockwise direction from the top of the element. For example, in the first image in Figure 10-6, the 45 degrees are represented by a line drawn from the center of the element and rotated 45 degrees counter-clockwise (bottom-left).
+
+Multiple Transformations:
+
+You’re not limited to just a single transformation. You can both scale an image and skew it; rotate it and translate it; or use any of the four different transform func- tions simultaneously. Simply add additional functions to the transform property, each separated by a space. For example, here’s how you can rotate an element 45 degrees and enlarge it to twice its normal size:
+     transform: rotate(45deg) scale(2);
+     
+Here’s an example with all four transformations applied at the same time:
+     transform: skew(45deg,0deg) scale(.5) translate(400px,500px) rotate(90deg);
+     
+The order in which you place the transform functions is the order in which the browser applies these effects. For example, in the second example, the element is first skewed, then scaled, then translated, and finally rotated. The order doesn’t really matter unless you’re using translate. Since translate actually moves the element, if you place it before a rotate, for example, the browser first moves the element and then rotates it. Since the element moved first, the point around which it rotates has changed. On the other hand, if you rotate it first, you’re then moving the rotated element a certain amount from its center (which is now in a new location).
+
+origin:
+
+Normally, when you apply a transformation to an element, the web browser uses the center of the element as the transformation point. For example, when you rotate an element, the browser rotates it around its center point (Figure 10-7, left). However, CSS3 lets you change that transformation point, using the transform-origin prop- erty. It works just like the background-position property (page 246); you can supply keyword values, absolute values in pixels, and relative values in ems and percentages.
+
+For example, to rotate a div around its top-left point (Figure 10-7, middle), you can use the left and top keywords, like this:
+    transform-origin: left top;
+    
+You can also use pixel values:
+    transform-origin: 0 0;
+    
+Or percentages:
+    transform-origin: 0% 0%;
+    
+Likewise, to rotate an element around its bottom-right corner (Figure 10-7, right), use the right and bottom keywords:
+    transform-origin: right bottom;
+    
+Which is also equivalent to:
+    transform-origin: 100% 100%;
+    
+When using pixel, em, or percentage values, the first number is the horizontal posi- tion, and the second is the vertical position.
+
+http://coding .smashingmagazine.com/2012/01/06/adventures-in-the- third-dimension-css-3-d-transforms/ 
+
+
+Adding a Transition
+The heart of CSS transitions are four properties that control which properties to animate, how long the animation takes, the type of animation used, and an op- tional delay before the animation begins. Here’s a simple example. Say you want a navigation button’s background color to change from orange to blue when a visitor mouses over it. First, you start with the two styles needed to switch between these two colors. For example, you can apply a class of .navButton to the link and then create two styles, like this:
+     .navButton {
+       background-color: orange;
+}
+     .navButton:hover {
+        background-color: blue;
+}
+These styles will work in any browser; hovering over the nav button will change its background from orange to blue. However, the change is instantaneous. To make the color animate over one second, add two new properties to the .navButton style, like this:
+
+.navButton {
+      background-color: orange;
+      transition-property: background-color;
+      transition-duration: 1s;
+}
+    .navButton:hover {
+        background-color: blue;
+}
+
+The first property—transition-property—specifies which properties to animate. You can specify a single property (as in the above example), use the keyword all to animate all CSS properties that change, or use a comma-separated list to specify more than one (but not all) properties. For example, say you create a :hover style so the text color, background color, and border color all change. You list out all three of those properties like this:
+transition-property: color, background-color, border-color; Or, to make it simple, use the all keyword like this:
+transition-property: all;
+
+In most cases, using all works well, since every CSS change is animated, which
+creates a pleasing visual effect.
+To specify how long the animation takes to complete, use the transition-duration property. This property takes either a value in seconds or milliseconds (thousandths of a second). For example, to make a transition take half a second to complete, you can use either:
+    transition-duration: .5s;
+Or:
+
+	transition-duration: 500ms;
+	
+	
+It’s even possible to set separate timings for each animated property. For example, when a visitor mouses over a button, you may want the text color to change rapidly, the background color to change a little more slowly, and the border color to change really slowly. To do so, you need to list the animated properties, using transition- property and then list the times, using transition-duration, like this:
+    transition-property: color, background-color, border-color;
+    transition-duration: .25s, .75s, 2s;
+    
+Unfortunately, like many CSS3 properties, transitions require vendor prefixes to work. In other words, the .navButton example above won’t work in most browsers until you add the proper vendor prefixes, so you need to rewrite that style like this:
+     .navButton {
+       background-color: orange;
+       -webkit-transition-property: background-color;
+       -moz-transition-property: background-color;
+       -o-transition-property: background-color;
+       transition-property: background-color;
+       -webkit-transition-duration: 1s;
+       -moz-transition-duration: 1s;
+       -o-transition-duration: 1s;
+       transition-duration: 1s;
+}
+You don’t need an -ms vendor prefix for Internet Explorer since IE 9 and earlier don’t understand transitions, and IE 10 understands the non-prefixed versions of the transition properties.
+
+
+Transition Timing:
+
+To have a working, animated transition, you only need to set transition-property and transition-duration. However, you can control the rate of the animation by using the transition-timing-function property. This property can be a little con- fusing: it doesn’t control how long the animation takes (that’s what the transition- duration property is for). Instead it controls the speed during the animation. For example, you can begin the animation slowly and then quickly complete it, creating an effect where the background color changes almost imperceptibly at first and then quickly completes its color change.
+The transition-timing-function property can take one of five keywords: linear, ease, ease-in, ease-out, and ease-in-out. If you don’t specify a timing function, the browser uses the ease method, which begins the animation slowly, speeds up in the middle, and slows down at the end, providing a more organic change. The linear option provides a steady change along the entire length of the animation. No option is really any better than the other, they just provide different looks, so try them out to see which one you like best.
+
+To use it, simply add the transition-timing-function property and the method you’d like to use:
+     transition-timing-function: ease-in-out;
+Of course, as with all of these transition properties, you need to add vendor prefixes as well. So to get this line of code to work in as many browsers as possible, you’ll need to rewrite it as:
+     -webkit-transition-timing-function: ease-in-out;
+     -moz-transition-timing-function: ease-in-out;
+     -o-transition-timing-function: ease-in-out;
+     transition-timing-function: ease-in-out;
+     
+     
+Delaying a Transition’s Start:
+
+Finally, you can prevent a transition from animating right away with the transition- delay property. For example, if you want to wait a half second before the animation begins, you can add this code:
+     transition-delay: .5s;
+     
+And, of course, this property requires vendor prefixes, so to get this code to work in most browsers, you’d need to write:
+     -webkit-transition-delay: .5s;
+     -moz-transition-delay: .5s;
+     -o-transition-delay: .5s;
+     transition-delay: .5s;
+     
+Most of the time, you won’t want to use a delay for all properties, since it kind of undermines the transition’s potential for interactivity. After all, it’s more like a cruel trick to make your visitors wait a second before they see any visual changes when they mouse over your button. However, if you’re animating several properties, you may want to make one property wait until the others finish before its animation starts. For example, say you have a button whose background color and text color you want to change, and then have its border color change suddenly after the other two properties have finished. Here’s how you might do that:
+    .navButton {
+      color: black;
+      background-color: #FF6603;
+      border: 5px solid #660034;
+      transition-property: color, background-color, border-color;
+      transition-duration: 1s, 1s, .5s;
+      transition-delay: 0, 0, 1s;
+}
+    .navButton:hover {
+      color: white;
+      background-color: #660034;
+      border-color: #FF6603;
+}
+
+As with the transition-duration property, you can specify different delay values for each property. The order in which you list the times must match the order of the properties listed for transition-property. For instance, in the preceding code, there’s no delay for the transition between the color and background color, but there’s a one-second delay before the border color changes.
+
+
+*******************transition delay tip*************************
+Usuallyyouputthetransitionpropertiesintothestartingstyle
+(forexample,.navButtononpage 348), not the final style (.navButton:hover). However, here’s a trick for use with CSS drop-down menus (see the box on page 313). One problem with drop-down menus in CSS is that they usually disappear very quickly if you accidentally mouse off the menu. However, you can make the menu appear quickly but disappear slowly using the transition-delay property. To do so, you add the following code to the original style:
+transition-delay: 5s; Then add no delay to the :hover style:
+        transition-delay: 0;
+        
+It’s somewhat counterintuitive, but this code basically makes the :hover transition happen immediately, with no delay. But to return to the regular style (where the menu disappears) takes 5 seconds. During that time, a visitor has enough time to move his errant mouse back over the menu before it disappears.
+
+********************************************************************
+
+
+Transition Shorthand:
+
+Writing out all the different properties—transition-property, transition-duration, transition-timing-function, and transition-duration—can get pretty tiring. Especially when you consider you need to also create vendor-prefixed versions of each of those as well. Fortunately, there’s a faster way to create transitions—the transition property.
+This property bundles all of the other properties into one. To use it, simply list the property, duration, timing function, and duration in a space-separated list. For example, to animate all CSS properties for one second using the ease-in timing function, with a half-second delay, write the following:
+    transition: all 1s ease-in .5s;
+    
+You need to list either all or a single CSS property and a duration, but the timing function and delay are optional. By default, the timing function is ease-in and there’s no delay. So if you simply want to animate the transition of all CSS properties for one second, then write this:
+    transition: all 1s;
+    
+If you only want to animate the change in the background color, then list that property:
+    transition: background-color 1s;
+    
+You can only list a single CSS property here, so if you wish to animate multiple CSS properties (but not all), then you can write a comma-separated list of space- separated transition properties. Take the example from page 347, where the border- color property is animated separately from the color and background color. You can rewrite that code like this:
+    transition: color 1s, background-color 1s, border-color .5s 1s;
+To make the code easier to read, many web designers put each transition on a separate line, like this:
+    transition: color 1s,
+                background-color 1s,
+                border-color .5s 1s;
+
+Animations:
+
+CSS3 provides another, more feature-rich mechanism for creating animations. With CSS transitions, you can only animate from one set of CSS properties to an- other. CSS3 animations let you animate from one set of properties to another set to another set and so on. In addition, you can have an animation repeat, pause when a visitor mouses over it, and even reverse itself once the animation reaches its end.
+CSS3 animations are a bit more complicated than transitions, but they have the added benefit of not necessarily needing a trigger to begin the animation. While you can add an animation to a :hover state so the animation plays when the mouse hovers over an element, you can also have an animation start when the page loads. This effect lets you draw attention to a banner or logo by animating it across the page when a visitor first enters your site.
+
+The first step in creating an animation is creating a set of keyframes. In animation, a keyframe is a single frame of an animation that dictates how the scene looks. Suppose the first keyframe shows a ball on one side of a soccer field. By adding a second keyframe, you can define an ending point for the animation—like the ball inside the goal on the other side of the soccer field. A web browser then provides the animation between the two keyframes by drawing all of the intermediate steps—the ball travelling across the field on its way to the goal.
+If you’re thinking transitions use a similar idea, you’re right. In a transition, you de- fine two styles and let the browser animate the change from one style to another. In this way, you could think of each of those styles as a keyframe. However, CSS3 animations let you define multiple keyframes, so you can create much more complex animated effects: a soccer ball traveling from one side of the field, to a player, to another player, and then into the goal, for example.
+There are two steps in creating an animation:
+
+1. Define the animation. This involves setting up keyframes that list the CSS properties to animate.
+
+2. Applytheanimationtoanelement.Oncedefined,youcanapplytheanimation to any number of elements on a page. You can even set up separate timings, delays, and other animation properties for each element. So you can use the same animation with slightly different settings multiple times on a page.
+
+Defining Keyframes
+The first step is to set up your keyframes. The syntax involved may look kind of strange, but here’s the basic structure:
+     @keyframes animationName {
+       from {
+        /* list CSS properties here */
+       }
+       to {
+         /* list CSS properties here */
+} }
+
+You start with @keyframes, followed by a name. The name is what you call the anima- tion. You’ll end up using that name later when you apply the animation to an element on the page, so make it descriptive, like “fadeOut” or “fadeIn.”
+
+You then add at least two keyframes. In the current example, the keywords from and to are used to create the beginning keyframe (from) and the final keyframe (to). Inside each keyframe you add one or more CSS properties—just as if you were creating a style. In fact, you can think of each keyframe as just a CSS style filled with one or more CSS properties. For example, say you want to create an animation that fades an element into view. You could start with an opacity value of 0 (invisible), and end with a value of 1 (fully visible):
+     @keyframes fadeIn{
+       from {
+opacity: 0; }
+      to {
+         opacity: 1;
+} }
+
+
+You’re not limited to just two keyframes either. You can use percentage values to define multiple keyframes. The percentage represents where in the overall length of the animation the change should occur. For example, say you want to create an effect where the background of an element changes from yellow to blue to red. You can write this:
+     @keyframes backgroundGlow {
+       from {
+         background-color: yellow;
+       }
+       50% {
+         background-color: blue;
+}
+       to {
+         background-color: red;
+} }
+In this case, the blue background will appear halfway through the animation. If you want the yellow to last longer and the blue to appear after three-quarters of the animation is complete, use 75% instead of 50%. You can continue to add additional keyframes this way (for example, at 25%, 66%, and so on).
+
+Nor are you limited to a single CSS property. You can place any number of animat- able properties (page 346) inside each keyframe—background-color, opacity, width, height, and so on:
+      @keyframes growAndGlow {
+       from {
+         background-color: yellow;
+       }
+       50% {
+         transform: scale(1.5);
+         background-color: blue;
+}
+       to {
+         transform: scale(3);
+         background-color: red;
+} }
+
+
+You can also get pretty tricky with the percentage values by adding multiple percent- age values for one set of CSS properties. This is useful in a couple of cases: first, it’s good if you want to animate to a certain point, pause, and then continue. For example, say you’d like to begin with a yellow background color for a <div> tag. Then you’d like to change that color to blue, stay at blue for a while, and then finish with a red color. In other words, you want a sort of pause in the middle while the background color stays constant before changing again. You can do that with this code:
+    @keyframes glow {
+      from {
+        background-color: yellow;
+      }
+      25%, 75% {
+        background-color: blue;
+}
+      to {
+        background-color: red;
+} }
+Notice the 25%, 75% in line 5. That means 25% of the way through the animation, the background color of the element should be blue. However, it should be blue 75% of the way through as well. In other words, from the 25% mark to the 75% mark, the background will remain solid blue, before finally turning red. If this animation ran for 4 seconds, then for the middle 2 seconds of the animation, the element’s background would remain solid blue.
+
+You can also use percentages when you want to use the same set of CSS proper- ties for different parts of the animation. For example, say you want to animate the background color again, but this time go from yellow to blue to orange to blue to orange to red. Blue and orange appear twice, so instead of writing their background- color properties multiple times, you can instead do this:
+    @keyframes glow {
+      from {
+        background-color: yellow;
+      }
+      20%, 60% {
+        background-color: blue;
+}
+      40%, 80% {
+        background-color: orange;
+}
+
+to {
+         background-color: red;
+} }
+
+In this case, the background color will turn blue at the 20% mark, orange at the 40% mark, then blue again at the 60% mark, and orange one last time at the 80% mark before finally turning red.
+
+One downside of CSS3 animations is that they require vendor-specific prefixes (like a lot of CSS3 properties). In other words, you need to repeat your keyframes for each browser. So to write this simple fade-in animation so it’ll work in as many browsers as possible, you have to write this:
+     @-webkit-keyframes fadeIn {
+       from {
+opacity: 0; }
+      to {
+         opacity: 1;
+} }
+     @-moz-keyframes fadeIn{
+       from {
+opacity: 0; }
+      to {
+         opacity: 1;
+} }
+     @-o-keyframes fadeIn{
+       from {
+opacity: 0; }
+      to {
+         opacity: 1;
+} }
+     @keyframes fadeIn{
+       from {
+opacity: 0; }
+
+to {
+         opacity: 1;
+} }
+Notice the two hyphens—one between the @ and the vendor prefix and one between the vendor prefix and the word keyframes.
+
+Applying an Animation:
+
+Once you’ve completed a set of keyframes, the animation is ready. However, to make it work, you need to apply it to an element on your page. You can add an animation to any style for any element on a page. If you simply add the animation to a style that applies immediately to an element—for example, an h1 tag style—the animation will apply when the page loads. You can use this technique to add an introductory animation to a page that makes a logo zoom into place in the page’s upper-left, or make a particular box of content glow to draw attention to it.
+In addition, you can apply an animation to one of the pseudo-classes, including :hover, :active, :target, or :focus to make an animation run when a visitor mouses over a link, for example, or clicks into a form field. Finally, you can apply the anima- tion to a class style and use JavaScript to dynamically apply that class in response to a visitor clicking a button or some other page element (see the box on page 351).
+CSS3 provides a handful of animation-related properties to control how and when an animation plays back (as well as a shorthand version that encompasses all the individual properties). At a minimum, to get an animation running, you need to sup- ply the name you gave the original animation (in the @keyframes rule as discussed on page 355), and a duration for the animation.
+Here’s a simple example. Say you want a div with an important announcement to fade into view when the page loads. You’ve given that div a class name of announcement: -<div class="announcement">.
+1. Create the fade-in animation with the @keyframes rule:
+     @keyframes fadeIn {
+       from { opacity: 0; }
+       to { opacity: 1; }
+}
+2. Apply that animation to the style for the <div> tag:
+     .announcement {
+       animation-name: fadeIn;
+       animation-duration: 1s;
+}
+The animation-name property simply tells the browser which animation to use. It’s the same name you provided when you created the animation in Step 1. The animation-duration property sets the time the animation takes from start to finish. In this example, these are the only two animation properties listed, but you can (and probably will) put other non-animation properties in the style as well. For example, in the real world, you’d probably add properties such as width, background-color, border, and so on to this .announcement style.
+
+As with the @keyframes rule, each of the animation properties require vendor-specific prefixes, so the above .announcement style would need to be written like the follow- ing to work in as many browsers as possible:
+     .announcement {
+       animation-name: fadeIn;
+       animation-duration: 1s;
+       -webkit-animation-name: fadeIn;
+       -webkit-animation-duration: 1s;
+       -moz-animation-name: fadeIn;
+       -moz-animation-duration: 1s;
+       -o-animation-name: fadeIn;
+       -o-animation-duration: 1s;
+       animation-name: fadeIn;
+       animation-duration: 1s;
+}
+
+It may seem a bit of a pain to define the animation in one place with the @keyframes rule and then apply it in another (the style); however, once you’ve defined the animation, you’re free to use it any number of times in any number of styles. For example, you can create a generic fade-in type of animation and apply it to differ- ent elements. What’s more, you can control the animation independently for each style—for example, make the header fade in over the course of half a second, but make another page element fade in for five seconds.
+In addition, you can apply more than one animation to an element. Say you create one animation named fadeIn to make an element fade in and another animation named blink to make the background color blink wildly. To apply both animations to the element, you provide a comma-separated list of names like this:
+     animation-name: fadeIn, blink;
+To give the animations separate timings, provide a list of comma-separated times:
+     animation-name: fadeIn, blink;
+     animation-duration: 1s, 3s;
+     
+    The order in which you place the times applies to the animation name in the same order. For example, the first animation gets the first time listed. In the above example, fadeIn takes one second to complete, while blink takes three seconds.
+You can apply several other useful animation properties as well. Read on.
+
+Timing the Animation:
+
+You’ve already seen that the animation-duration property lets you control an ani- mation’s length. As with transitions, you can use milliseconds (750ms, for example) or seconds (.75s, for example) to specify the duration.
+As with transitions, you can also set a specific type of timing function to control the rate of the animation throughout that duration. For example, you can start the anima- tion slowly and end it quickly, using a cubic-Bezier curve (page 349) or using one of the built-in keyword methods: linear, ease, ease-in, ease-out, ease-in-out. These work the same as the transition-timing-function property discussed on page 348.
+You can use the animation-timing-function to control the entire animation or just specific keyframes. For example, to apply the ease-out timing function for the fadeIn animation presented earlier (Step 1 on page 359), add the timing function to the .announcement style (Step 2 on page 360):
+     .announcement {
+       animation-name: fadeIn;
+       animation-duration: 1s;
+       animation-timing-function: ease-out;
+}
+
+However, you can also control the timing function for the animation between key- frames. For example, say you create an animation that has three keyframes with three different background colors. The web browser will animate from one color
+to another and then to a third. Perhaps you want it to slowly move from the first to the second color using a cubic Bezier curve, and then move in a uniform time from the middle to the end. You can do that by adding two timing functions, one to the first keyframe (which controls the animation from keyframe 1 to 2), and one at the second keyframe to control the animation from keyframe 2 to 3:
+     @keyframes growAndGlow {
+       from {
+         background-color: yellow;
+         animation-timing-function: cubic-bezier(1, .03, 1, .115);
+       }
+       50% {
+         transform: scale(1.5);
+         background-color: blue;
+         animation-timing-function: linear;
+}
+       to {
+         transform: scale(3);
+         background-color: red;
+} }
+
+You can also delay the beginning of the animation using the property. It works the same as the transition-delay property for transitions (page 351), and simply waits a specific number of milliseconds or seconds before the animation begins. For example, if you want to wait one second before the “announcement” div fades into view, you can rewrite that .announcement class like this:
+     .announcement {
+       animation-name: fadeIn;
+       animation-duration: 1s;
+       animation-delay: 1s;
+}
+Adding a delay to an animation is a great way to catch people’s attention and add surprise to a page.
+
+Finishing the Animation
+With CSS, you can control a few additional aspects of an animation, including whether to repeat an animation, which direction the animation runs if it’s animated more than once, and also how the browser should format the element when the animation is complete.
+Transitions are animations that only run once—mouse over a button and the button grows, for example. Animations, however, can run once, twice, or continuously, thanks to the animation-iteration-count property. If you want an animation to run 10 times (fade in and out 10 times, perhaps), add this code to the style you’re animating:
+    animation-iteration-count: 10;
+Normally a browser only plays the animation once, and if that’s all you’re after, then leave off this iteration count property. If you want the animation to play continu- ously, the animation-iteration-count property accepts one keyword: infinite. So to run the fadeIn animation an infinite number of times on the announcement div, you can create this style:
+    .announcement {
+      animation-name: fadeIn;
+      animation-duration: .25s;
+      animation-iteration-count: infinite;
+}
+
+To make an animation move forward on odd runs and backward on even runs, use the animation-direction property and the alternate keyword. For example, to make an element fade out and then back in again, you can create an animation called fadeOut, like this:
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+}
+
+Then, play that animation twice, reversing its direction on the second time:
+     .fade {
+       animation-name: fadeOut;
+       animation-duration: 2s;
+       animation-iteration-count: 2;
+       animation-direction: alternate;
+}
+
+No matter how many times you have a web browser run an animation, once the animation is completed, the browser displays the animated element in its original, pre-animation state. For example, say you animate an image so it slowly grows to twice its size. Once the animation is completed, the web browser snaps the image back down to its original size, creating a jarring visual effect. Fortunately, you can tell the browser to keep the animated element formatted the same as when the animation ended by setting the animation-fill-mode property to forwards.
+animation-fill-mode: forwards;
+Apply this property to the element you’re animating, along with the animation-name,
+animation-duration, and other animation properties.
+
+Animation Shorthand:
+
+As you can see, there are a lot of animation properties, and writing all of them out in addition to all of the vendor-prefixed versions is a recipe for carpal tunnel syndrome. While you still need vendor-prefixed versions, you can simplify things by using the animation shorthand property. This single property combines animation-name, animation-duration, animation-timing-function, animation-iteration-count, animation-direction, animation-delay, and animation-fill-mode into a single property. For example, you can take this code:
+.fade {
+animation-name: fadeOut; animation-duration: 2s; animation-timing-function: ease-in-out;
+￼￼￼
+animation-iteration-count: 2;
+      animation-direction: alternate;
+      animation-delay: 5s;
+      animation-fill-mode: forwards;
+}
+And rewrite it like this:
+    .fade {
+      animation: fadeOut 2s ease-in-out 2 alternate 5s forwards;
+}
+
+That’s one line of code instead of seven! You should list the property values in the order used above: name, duration, timing function, count, direction, delay, and fill- mode. In addition, make sure each value is separated by a space. Only the name and duration are actually required. The other values are optional.
+If you want to apply more than one animation to an element, simply use comma- separated lists of animation properties. For example, to apply two animations (say fadeOut and glow) to the .fade style, write this:
+    .fade {
+      animation: fadeOut 2s ease-in-out 2 alternate 5s forwards,
+glow 5s;
+}
+Of course, in real usage you’d need to use vendor prefixes as well:
+    .fade {
+      -webkit-animation: fadeOut 2s ease-in-out 2 alternate 5s forwards,
+                          glow 5s;
+      -moz-animation: fadeOut 2s ease-in-out 2 alternate 5s forwards,
+                      glow 5s;
+      -o-animation: fadeOut 2s ease-in-out 2 alternate 5s forwards,
+                    glow 5s;
+      animation: fadeOut 2s ease-in-out 2 alternate 5s forwards,
+glow 5s;
+}
+In general, you should opt to use the animation shorthand—it’s much more concise and gentler on your fingers and the keyboard.
+
+Pausing an Animation
+CSS3 includes another animation property—animation-play-state—to control an animation’s playback. It accepts only one of two keywords: running or paused. To pause an animation, simply apply this declaration to a style:
+    animation-play-state: paused;
+aniMaTionS
+ChaPter 10: CSS TranSForMS, TranSiTionS, anD aniMaTionS 365
+TuToriaL
+There’s only one way to really apply that using CSS, however—a pseudo-class. As with transitions, you need some kind of trigger to pause an animation. One way to do this is to pause any animation when a visitor mouses over the animation. Here’s an example using the .fade class style:
+     .fade {
+       animation: fadeOut 2s ease-in-out 2 alternate 5s forwards,
+glow 5s;
+}
+This code runs two animations—fadeOut and glow—on any element with the fade class applied to it. Say you want to let visitors pause this animation simply by mous- ing over it. You’d only need to add one more style:
+     .fade:hover {
+       animation-play-state: paused;
+}
+Of course, you’ll need all the vendor prefixed versions as well. A more powerful way to pause an animation would be to dynamically apply the animation-play-state property to the element using JavaScript. In this way, you can create a complex animation and add a Pause button that pauses the animation when clicked. See the box on page 351 for more on JavaScript and CSS animations.
+
+Animating on Hover:
+
+So far, the animations you’ve seen here would all run when the page loads. You have a few other options, including several pseudo-classes and using JavaScript, to trigger a CSS animation. The most common pseudo-class for animation is :hover. With it, you can run an animation when a visitor mouses over any element; for example, you can make a logo do fancy gymnastics, move off the page, and then move back again.
+To animate an element when a visitor’s mouse hovers over it, start by creating an animation with the @keyframes rule (Step 1 on page 359). Then, create a :hover pseudo-class for whatever element you wish to animate. In that style, you simply add the animation properties (Step 2 on page 360). Now the animation runs only when the visitor hovers over the element.

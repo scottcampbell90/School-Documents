@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+video, img, header.mainHeader nav {
+	display: none;
+}
+.wrapper {
+	background-color: #fff;
+	margin: auto;
+	padding: auto;
+}
+* {
+	color: #000000 !important;
+}
+section.main {
+	width: 50%;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	border:none;
+}
+aside.competition {
+	width:45%;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	border: none;
+}
+aside.competition .news, footer {
+	border: none;
+}
+header.mainHeader hgroup h1, header.mainHeader hgroup h2, section.main h1, section.main article h1, section.main h2, aside.competition h1, aside.competition h2, aside.competition h3, article .news h1 {
+	font-family: Arial, serif;
+	color: #000;
+}
+h1 {
+	font-size: 18pt;
+}
+h2 {
+	font-size: 16pt;
+}

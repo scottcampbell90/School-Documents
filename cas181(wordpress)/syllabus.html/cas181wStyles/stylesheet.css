@@ -1,0 +1,394 @@
+/*Desire2Learn Inc.*/
+/*Ordinary Blue Template*/
+/*May 2010*/
+
+/* Layout elements */
+
+html { 
+	background-image: url(lt_blue_bkgrd.gif);
+	padding: 30pt;
+}
+	  
+#container {
+	border: 5px solid #E6E4DA;
+	background-color:#FFFFFF;
+	border: 2px solid #283B5E;
+	margin-bottom: 0px;
+	padding: 10pt 24pt;
+}
+
+#header{
+	margin: 0px;
+	padding: 0px;
+}
+
+#body{
+	margin: 0px;
+	padding: 0px;
+}
+
+.img{
+	margin: 4pt 0 12pt 0;
+	padding: 0px;
+	border: thin solid #283B5E;
+}
+
+.imgRight{
+	margin: 4pt 0 12pt 0;
+	padding: 0px;
+	float: right;
+	padding-left:20pt;
+	border: thin solid #283B5E;
+}
+
+.imgLeft{
+	margin: 4pt 0 12pt 0;
+	padding: 0px;
+	float: left;
+	padding-right: 20pt;
+	border: thin solid #283B5E;
+}
+
+#footer{
+	clear: both; 
+	margin: 0px;
+	padding: 0px;
+	padding-top: 20px;
+	text-align: center;
+	font-size:9pt;
+}
+
+#footnotes{
+	border-top: dashed 1px #444;
+	border-bottom: dashed 1px #444;
+	clear: both; 
+	margin: 0px;
+	padding: 0px;
+	font-size: 8pt;
+}
+
+.footnote{
+	padding-bottom:2pt;
+	padding-left: 14pt;
+	padding-right:0pt;
+	padding-top:0pt;
+	font-size: 8pt;
+}
+
+/* Text elements */
+
+body {
+	font-family: Trebuchet MS, Verdana, sans-serif;
+	font-size:12pt;
+	margin: 0 auto;
+	padding: 0;
+	text-align:left;
+	
+}
+
+h1 {
+	margin-top: -24pt;
+	margin-bottom: 12pt;
+	margin-left: -24pt;
+	margin-right: -24pt;
+	padding-top: 10pt;
+	padding-left:24pt;
+	padding-bottom: 2pt;
+	text-align: center;
+	text-indent: 0pt;
+	word-spacing: 0.125em;
+	font-family: Georgia, serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size:24pt;
+	color: #FFF;
+	letter-spacing: 0em;
+	text-decoration: none;
+	background-color:#283B5E;
+}
+	
+h2 {
+	margin-top: 24pt;
+	margin-bottom: 12pt;
+	text-align: left;
+	text-indent: 0pt;
+	word-spacing: 0.125em;
+	font-family: Georgia, serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18pt;
+	color: #283B5E;
+	letter-spacing: 0em;
+	text-decoration: none;
+	border-bottom: solid 1px #283B5E;
+	clear: both;
+	padding-top: 10px;
+}
+	   
+h3 {
+	margin-top: 24pt;
+	margin-bottom: 6pt;
+	text-align: left;
+	word-spacing: 0.125em;
+	font-family: Georgia, serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 13pt;
+	color: #283B5E;
+	letter-spacing: 0em;
+	text-decoration: none;
+	text-transform: uppercase;
+	clear: both; 
+}
+
+h4 {
+	margin-top: 18pt;
+	margin-bottom: 6pt;
+	text-align: left;
+	word-spacing: 0.250em;
+    font-family: Verdana, sans-serif; 
+	font-style: bold;
+	font-weight: bold;
+	font-size: 11pt;
+	color: #3f3f3f;
+	letter-spacing: 0.00em;
+	text-decoration: none;
+	text-transform: uppercase;
+	clear: both; 
+}
+
+code{
+	font-size: 10pt;
+	font-family: "Courier New", Courier, monospace;
+}
+
+strong {
+	word-spacing: 0em;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+	font-weight: normal;
+	font-family: Georgia, serif;
+}
+
+a:link { 
+	color: #AD1F1F;
+	border-bottom: 1px solid #AD1F1F;
+	text-decoration: none;
+}
+		
+a:visited { 
+	color: #AD1F1F;
+	border-bottom: 1px solid #AD1F1F;
+	text-decoration: none; 
+}
+		   
+a:hover { 
+	color:#000; 
+	background-color: #F4F2E4;
+	border-bottom: 1px solid #888;
+	text-decoration: none;
+}
+
+a:active { 
+	color:#000; 
+	background-color: #F4F2E4;
+	border-bottom: 1px solid #888;
+	text-decoration: none;
+}
+
+blockquote {
+	margin:22px 40px;
+	upadding:3px;
+	color:#000;
+	font-style: italic;
+	padding: 5px 50px;
+}
+
+p {   
+	text-indent:0pt; 
+	margin-top:6pt; 
+	margin-bottom:6pt;  
+	line-height: 16pt;
+	font-style:normal; 
+	font-weight:normal; 
+	text-decoration:none; 
+}
+
+p.emphasis{
+	background-color: #FFFFCC;
+}
+
+p.caption {
+	margin: 0px;
+	padding: 0px;
+	font-size: 10pt;
+	clear: both;
+}
+		
+.note {
+	text-align: left;
+	text-indent: 0pt;
+	padding-top: 6pt;
+	padding-bottom: 6pt;
+	padding-left: 6pt;
+	padding-right: 6pt;
+	background-color: #FFFFCC;
+	font-size: 11pt;
+	text-decoration: none;
+	line-height: 14pt;
+	border-top: 1px dashed #999;
+	border-bottom: 1px dashed #999;
+}
+
+img { 
+	border:none;
+}
+
+/* Lists */
+
+ul {
+	text-align:left;
+	font-size:11pt;
+	list-style-type: circle;
+	list-style-position: outside;
+    padding-bottom:2pt; 
+    padding-top:2pt;
+}
+
+ol {
+	text-align:left;
+	font-size:11pt;
+	list-style-position: outside;
+	padding-bottom:10pt;
+	padding-top:2pt;
+}
+	
+li {
+	margin-top:2px;
+	margin-bottom:2px;
+	font-size: 12pt;
+}
+
+.licolumn {
+
+	float:left;
+	margin: 0 0 0 0;
+	padding: 0 10px 0 0;
+	width:250px;
+}
+
+dl {
+	text-align:left;
+	font-size:11pt;
+	padding-bottom:10pt; 
+    padding-left:20pt; 
+    padding-right:0pt; 
+    padding-top:2pt;
+}
+
+dt {
+
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	font-weight: bold;
+}
+
+dd {
+
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+}
+
+
+/* Spans */
+
+span.new { 
+	font-family: Verdana, Arial, sans-serif;
+	font-size:9pt; 
+	color:#a81400; 
+	letter-spacing:0em; 
+	font-style:bold; 
+	font-weight:bold; 
+	text-decoration:none;
+}
+
+span.note { 
+	word-spacing: 0.250em;
+    font-family: Verdana, sans-serif; 
+	font-style: bold;
+	font-weight: bold;
+	font-size: 11.0pt;
+	color: #a81400;
+	letter-spacing: 0.00em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+/* Tables */
+
+table {
+	margin-top: 6px;
+	margin-bottom: 12px;
+	width: 100%;
+	border-collapse: collapse;
+	border-bottom: 2px solid #666;
+}
+
+th {
+	background-color: #CED3DE;
+	font-weight: bold;
+	vertical-align: top;
+	border-top: 1px solid #888888;
+	border-left: 1px solid #888888;
+	border-right: 1px solid #888888;
+	padding: 5px;
+	font-size: 11pt;
+	font-color: #000;
+}
+
+
+td {
+	border-collapse: collapse;
+	padding: 5px;
+	vertical-align: top;
+	border-top: 1px solid #888888;
+	border-bottom: 1px solid #888888;
+	border-left: 1px solid #888888;
+	border-right: 1px solid #888888;
+	font-size: 11pt;
+	color: #30302f;
+	width: auto;
+}
+
+tr {
+	border-collapse: collapse;
+	padding: 5px;
+	margin: 0;
+	vertical-align: top;
+	border-left: 1px solid #888888;
+	border-right: 1px solid #888888;
+}
+
+ul.table { 
+    padding-bottom:0pt; 
+    padding-left:0pt; 
+    padding-right:0pt;
+    padding-top:5pt;  }
+	
+
+ol.table {
+	padding-bottom:0pt;
+	padding-left:0pt;
+	padding-right:0pt;
+	padding-top:5pt;
+}
+
+.example {
+	font-family: "Comic Sans MS";
+	color: #FF0000;
+	background-color: #FFFFCC;
+	}
